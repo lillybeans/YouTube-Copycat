@@ -1,0 +1,71 @@
+****TO LAUNCH WEBSITE****
+go to cmd, cd to project root folder, type:
+
+npm install
+npm start
+
+then go to localhost:8080
+***************************
+new syntax
+
+<SearchBar onSearchTermChange={term => this.videoSearch(term)}/>
+
+can think of it like this: I'm passing SearchBar a function:
+
+onSearchTermChange(term){
+  this.videoSearch(term);
+}
+
+function(param) is the same as (param)=>
+
+{x} --> whenever you want to pass/use a javascript variable inside the jsx "html" part, you need to enclose it in curly braces
+or else it will be interpreted as a string
+
+- functions (i.e. event handlers like onVideoSelect) can be passed as properties!
+
+- the html class will be "className" in React, since "class" is already a reserved keyword in React.
+
+- need npm install to install our project, think of it as a java compiler that looks for all dependencies and libraries
+your code needs
+
+- bundle.js on index.html - web and babel puts all js files in the src folder into a single file called bundle.js so we just need
+to include this on index.html
+
+- react: use javascript to produce html. we write a bunch of components and nest them together.
+
+- component: collection of js functions that produce html. components will not be taken into the DMO until we shove it into 
+ex. search bar might be its component, video player, title, description is another component...
+components can be nested in a list (just like you can have div inside div inside div..)
+
+- jsx: javascript-html hybrid looking language that we use in react that can produce html
+
+- transpiler: translates jsx into vanilla (plain old) js
+
+- when you declare const App, that's a class. to instantiate, wrap in brackets <App/>
+We must pass instantiated objects to ReactDOM
+
+- "()=>" is the exact samething as "function" keyword
+
+TO INSTALL NEW NPM PACKAGES (in this case, youtube) in our node_modules:
+npm install -save youtube-api-search
+
+- functional component vs. class based component: class based component is more "intelligent" and monitors what
+happens to it
+
+- import React, {Component} from 'react';
+so we can do "extends Component" directly vs. "extends React.Component"
+
+- state: each class based component has its own state object. whenever component changes, render() would be called,
+and all its nested children would be re-rendered as well.
+
+functional components do not have states, only class.
+
+Think of functinoal components as java functions, and class based components as OOP in Java
+
+- controlled component (slave): the component's value is changed by state. 
+
+-downward data flow: only most parent component should be responsible for fetching data, and pass it to its chidlren components
+
+passing from parent "App" to child "VideoList":
+
+
